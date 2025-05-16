@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nel Cuore della Cura - Chi Sono</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Lato:wght@300;400;700&amp;family=Open+Sans:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+font-family: 'Lato', 'Open Sans', sans-serif;
+color: #1a1a2e;
+background-color: #f8f9fa;
+width: 100%;
+height: 100%;
+overflow-x: hidden;
+}
+
+.slide {
+width: 390px;
+min-height: 844px;
+position: relative;
+overflow: hidden;
+background-color: #f8f9fa;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.slide-content {
+padding: 40px 25px;
+position: relative;
+z-index: 2;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100%;
+}
+
+h1 {
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+text-align: center;
+font-size: 2.4em;
+margin-bottom: 30px;
+color: #1a1a2e;
+position: relative;
+padding-bottom: 15px;
+}
+
+h1::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 80px;
+height: 3px;
+background-color: #b30000;
+border-radius: 3px;
+}
+
+.quote-box {
+background-color: white;
+padding: 35px 25px;
+border-radius: 18px;
+width: 100%;
+border-left: 6px solid #b30000;
+box-shadow: 0 10px 30px rgba(26, 26, 46, 0.12);
+position: relative;
+margin-bottom: 20px;
+}
+
+.quote-text {
+font-size: 1.15em;
+line-height: 1.6;
+text-align: center;
+position: relative;
+font-weight: 300;
+z-index: 2;
+}
+
+.quote-text p {
+margin-bottom: 20px;
+}
+
+.quote-text p:last-child {
+margin-bottom: 0;
+}
+
+.red-accent {
+color: #b30000;
+font-weight: 500;
+}
+
+.quote-mark {
+font-size: 4em;
+position: absolute;
+opacity: 0.08;
+color: #b30000;
+font-family: 'Georgia', serif;
+z-index: 1;
+}
+
+.quote-mark.left {
+top: -15px;
+left: -5px;
+}
+
+.quote-mark.right {
+bottom: -35px;
+right: -5px;
+}
+
+.heart-icon {
+color: #b30000;
+font-size: 0.8em;
+margin: 0 3px;
+animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.2); }
+100% { transform: scale(1); }
+}
+
+.highlight {
+background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(179,0,0,0.15) 40%);
+padding: 0 3px;
+}
+
+.ecg-container {
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 80px;
+overflow: hidden;
+opacity: 0.15;
+}
+
+.ecg-line {
+position: absolute;
+bottom: 20px;
+left: 0;
+height: 60px;
+width: 1500px;
+background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 L30,30 L45,5 L60,55 L75,30 L100,30 L150,30 L170,30 L185,5 L200,55 L215,30 L240,30 L290,30 L310,30 L325,5 L340,55 L355,30 L380,30 L430,30 L450,30 L465,5 L480,55 L495,30 L520,30 L570,30 L590,30 L605,5 L620,55 L635,30 L660,30 L710,30 L730,30 L745,5 L760,55 L775,30 L800,30 L850,30 L870,30 L885,5 L900,55 L915,30 L940,30 L990,30 L1010,30 L1025,5 L1040,55 L1055,30 L1080,30 L1130,30 L1150,30 L1165,5 L1180,55 L1195,30 L1200,30" fill="none" stroke="%23b30000" stroke-width="2"/></svg>') repeat-x;
+animation: ecgAnimate 15s linear infinite;
+}
+
+@keyframes ecgAnimate {
+0% {
+transform: translateX(0);
+}
+100% {
+transform: translateX(-1200px);
+}
+}
+
+.doctor-icon {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+background-color: #1a1a2e;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 25px;
+border: 3px solid rgba(179, 0, 0, 0.3);
+box-shadow: 0 8px 25px rgba(26, 26, 46, 0.15);
+}
+
+.doctor-icon i {
+font-size: 40px;
+color: #f8f9fa;
+}
+
+.decorative-elements {
+position: absolute;
+top: 0;
+right: 0;
+width: 120px;
+height: 120px;
+opacity: 0.05;
+z-index: 1;
+}
+</style>
+</head>
+<body><img alt="Logo" src="logo.png" style="width:60px; position:absolute; top:15px; left:15px; z-index:99;"/>
+<div class="slide">
+<!-- ECG Animation -->
+<div class="ecg-container">
+<div class="ecg-line"></div>
+</div>
+<!-- Decorative Elements -->
+<svg class="decorative-elements" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M100,15 C152.467,15 195,57.533 195,110 C195,162.467 152.467,205 100,205 C47.533,205 5,162.467 5,110 C5,57.533 47.533,15 100,15 Z M100,30 C55.964,30 20,65.964 20,110 C20,154.036 55.964,190 100,190 C144.036,190 180,154.036 180,110 C180,65.964 144.036,30 100,30 Z M160,110 C160,143.137 133.137,170 100,170 C66.863,170 40,143.137 40,110 C40,76.863 66.863,50 100,50 C133.137,50 160,76.863 160,110 Z M140,110 C140,132.091 122.091,150 100,150 C77.909,150 60,132.091 60,110 C60,87.909 77.909,70 100,70 C122.091,70 140,87.909 140,110 Z M120,110 C120,121.046 111.046,130 100,130 C88.954,130 80,121.046 80,110 C80,98.954 88.954,90 100,90 C111.046,90 120,98.954 120,110 Z" fill="#1a1a2e"></path>
+</svg>
+<div class="slide-content">
+<div class="doctor-icon">
+<i class="fas fa-user-md"></i>
+</div>
+<h1>Chi Sono</h1>
+<div class="quote-box">
+<div class="quote-mark left">"</div>
+<div class="quote-text">
+<p>Sono un medico <span class="red-accent">specializzato in cardiologia interventistica pediatrica</span>.</p>
+<p>Ogni giorno affronto le sfide delle cardiopatie congenite per <span class="highlight">restituire futuro e speranza</span> ai pazienti più fragili.</p>
+<p>Credo nella <span class="red-accent">precisione della scienza</span>, nella <span class="red-accent">potenza della tecnica</span> e nella <span class="red-accent">gentilezza del cuore</span>. <i class="fas fa-heartbeat heart-icon"></i></p>
+</div>
+<div class="quote-mark right">"</div>
+</div>
+</div>
+</div>
+<div style="position:fixed; bottom:15px; width:100%; display:flex; justify-content:space-around; z-index:99;"><a href="index.html" style="background:#1a1a2e; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">⬅ Indietro</a><a href="index.html" style="background:#1a1a2e; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">🏠 Home</a><a href="slide_03.html" style="background:#1a1a2e; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">Avanti ➡</a></div></body>
+</html>

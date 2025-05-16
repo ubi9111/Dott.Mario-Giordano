@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nel Cuore della Cura</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Lato:wght@300;400;700&amp;family=Open+Sans:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+font-family: 'Lato', 'Open Sans', sans-serif;
+color: #f8f9fa;
+background-color: #1a1a2e;
+width: 100%;
+height: 100%;
+overflow-x: hidden;
+}
+
+.slide {
+width: 390px;
+min-height: 844px;
+position: relative;
+overflow: hidden;
+background-color: #1a1a2e;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.slide-content {
+padding: 30px 25px;
+position: relative;
+z-index: 2;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+height: 100%;
+}
+
+.heart-bg {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+opacity: 0.08;
+z-index: 1;
+width: 90%;
+max-width: 300px;
+height: auto;
+}
+
+.subtitle {
+font-size: 0.9em;
+margin-bottom: 15px;
+letter-spacing: 1.5px;
+color: #f8f9fa;
+font-weight: 400;
+opacity: 0.9;
+}
+
+h1 {
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+font-size: 2.5em;
+margin-bottom: 15px;
+color: #f8f9fa;
+line-height: 1.1;
+}
+
+h2 {
+font-family: 'Montserrat', sans-serif;
+font-size: 1.6em;
+color: #b30000;
+margin-bottom: 10px;
+font-weight: 700;
+}
+
+h3 {
+font-size: 1.1em;
+font-weight: normal;
+color: #f8f9fa;
+opacity: 0.9;
+margin-bottom: 25px;
+padding: 0 10px;
+line-height: 1.4;
+}
+
+.content-box {
+background-color: rgba(26, 26, 46, 0.85);
+padding: 30px 20px;
+border-radius: 15px;
+width: 100%;
+margin-top: 20px;
+border-left: 5px solid #b30000;
+backdrop-filter: blur(10px);
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.slogan {
+font-size: 1.2em;
+font-style: italic;
+margin-top: 25px;
+opacity: 0.85;
+font-family: 'Open Sans', sans-serif;
+font-weight: 300;
+line-height: 1.5;
+}
+
+.heart-icon {
+color: #b30000;
+font-size: 0.8em;
+margin: 0 5px;
+animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.2); }
+100% { transform: scale(1); }
+}
+
+.ecg-container {
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 80px;
+overflow: hidden;
+opacity: 0.25;
+}
+
+.ecg-line {
+position: absolute;
+bottom: 20px;
+left: 0;
+height: 60px;
+width: 1500px;
+background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 L30,30 L45,5 L60,55 L75,30 L100,30 L150,30 L170,30 L185,5 L200,55 L215,30 L240,30 L290,30 L310,30 L325,5 L340,55 L355,30 L380,30 L430,30 L450,30 L465,5 L480,55 L495,30 L520,30 L570,30 L590,30 L605,5 L620,55 L635,30 L660,30 L710,30 L730,30 L745,5 L760,55 L775,30 L800,30 L850,30 L870,30 L885,5 L900,55 L915,30 L940,30 L990,30 L1010,30 L1025,5 L1040,55 L1055,30 L1080,30 L1130,30 L1150,30 L1165,5 L1180,55 L1195,30 L1200,30" fill="none" stroke="%23b30000" stroke-width="2"/></svg>') repeat-x;
+animation: ecgAnimate 15s linear infinite;
+}
+
+@keyframes ecgAnimate {
+0% {
+transform: translateX(0);
+}
+100% {
+transform: translateX(-1200px);
+}
+}
+
+.doctor-avatar {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+background-color: #b30000;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 20px;
+position: relative;
+border: 3px solid rgba(255, 255, 255, 0.3);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-avatar i {
+font-size: 60px;
+color: #fff;
+}
+
+.doctor-avatar::after {
+content: '';
+position: absolute;
+top: -10px;
+right: -10px;
+width: 40px;
+height: 40px;
+background-color: #1a1a2e;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #fff;
+font-size: 20px;
+border: 2px solid #b30000;
+}
+
+.doctor-avatar::before {
+content: '\f004';
+font-family: 'Font Awesome 5 Free';
+font-weight: 900;
+position: absolute;
+top: -10px;
+right: -10px;
+width: 40px;
+height: 40px;
+z-index: 2;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #fff;
+font-size: 20px;
+}
+</style>
+</head>
+<body><img alt="Logo" src="logo.png" style="width:60px; position:absolute; top:15px; left:15px; z-index:99;"/>
+<div class="slide">
+<!-- Stylized Heart Background -->
+<svg class="heart-bg" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" fill="#b30000"></path>
+</svg>
+<!-- ECG Animation -->
+<div class="ecg-container">
+<div class="ecg-line"></div>
+</div>
+<div class="slide-content">
+<div class="doctor-avatar">
+<i class="fas fa-user-md"></i>
+</div>
+<div class="content-box">
+<div class="subtitle">NEL CUORE DELLA CURA</div>
+<h1>Dott. Mario Giordano</h1>
+<h2>Cardiologo Interventista</h2>
+<h3>Specialista in Cardiopatie Congenite e Interventistica Pediatrica</h3>
+<div class="slogan">
+<i class="fas fa-heartbeat heart-icon"></i>
+"Dove la tecnologia incontra il battito della vita"
+<i class="fas fa-heartbeat heart-icon"></i>
+</div>
+</div>
+</div>
+</div>
+<div style="position:fixed; bottom:15px; width:100%; display:flex; justify-content:space-around; z-index:99;"><a href="index.html" style="background:#1a1a2e; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">🏠 Home</a><a href="slide_02.html" style="background:#1a1a2e; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">Avanti ➡</a></div></body>
+</html>

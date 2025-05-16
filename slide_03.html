@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nel Cuore della Cura - Formazione Accademica</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Lato:wght@300;400;700&amp;family=Open+Sans:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+font-family: 'Lato', 'Open Sans', sans-serif;
+color: #1a1a2e;
+background-color: #f8f9fa;
+width: 100%;
+height: 100%;
+overflow-x: hidden;
+}
+
+.slide {
+width: 390px;
+min-height: 844px;
+position: relative;
+overflow: hidden;
+background-color: #f8f9fa;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+}
+
+.slide-content {
+padding: 40px 25px;
+position: relative;
+z-index: 2;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+}
+
+h1 {
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+text-align: center;
+font-size: 2.2em;
+margin-bottom: 30px;
+color: #1a1a2e;
+position: relative;
+padding-bottom: 15px;
+}
+
+h1::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 80px;
+height: 3px;
+background-color: #b30000;
+border-radius: 3px;
+}
+
+.timeline-container {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+gap: 25px;
+flex-grow: 1;
+position: relative;
+padding-bottom: 20px;
+}
+
+.timeline-line {
+position: absolute;
+top: 0;
+left: 26px;
+width: 4px;
+height: 100%;
+background-color: rgba(179, 0, 0, 0.2);
+border-radius: 4px;
+z-index: 1;
+}
+
+.timeline-item {
+position: relative;
+z-index: 2;
+margin-left: 15px;
+padding-bottom: 15px;
+}
+
+.timeline-year {
+background-color: #b30000;
+color: white;
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+font-size: 1.3em;
+padding: 10px 15px;
+border-radius: 30px;
+display: inline-block;
+margin-bottom: 15px;
+box-shadow: 0 4px 12px rgba(179, 0, 0, 0.25);
+position: relative;
+z-index: 3;
+margin-left: 8px;
+}
+
+.year-dot {
+position: absolute;
+width: 26px;
+height: 26px;
+border-radius: 50%;
+background-color: #b30000;
+left: -15px;
+top: 50%;
+transform: translateY(-50%);
+z-index: 3;
+border: 4px solid #f8f9fa;
+box-shadow: 0 0 0 2px rgba(179, 0, 0, 0.3);
+}
+
+.timeline-content {
+background-color: white;
+border-radius: 15px;
+padding: 20px;
+margin-left: 25px;
+box-shadow: 0 6px 15px rgba(26, 26, 46, 0.1);
+border-left: 4px solid #1a1a2e;
+}
+
+.timeline-title {
+font-size: 1.4em;
+margin-top: 0;
+margin-bottom: 10px;
+color: #1a1a2e;
+font-weight: 600;
+font-family: 'Montserrat', sans-serif;
+}
+
+.timeline-university {
+font-size: 1.1em;
+margin-bottom: 6px;
+display: flex;
+align-items: center;
+}
+
+.university-icon {
+color: #b30000;
+margin-right: 8px;
+}
+
+.timeline-grade {
+font-size: 1.1em;
+margin-bottom: 12px;
+font-weight: bold;
+color: #b30000;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+.badge {
+display: inline-block;
+padding: 4px 8px;
+border-radius: 20px;
+font-size: 0.75em;
+font-weight: 500;
+background-color: #1a1a2e;
+color: white;
+vertical-align: middle;
+}
+
+.timeline-thesis {
+font-size: 0.95em;
+font-style: italic;
+color: #1a1a2e;
+padding-left: 12px;
+border-left: 2px solid #b30000;
+margin-top: 12px;
+}
+
+.timeline-thesis-title {
+font-weight: 600;
+margin-bottom: 4px;
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.timeline-thesis-content {
+font-weight: 300;
+line-height: 1.4;
+}
+
+.highlight {
+background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(179,0,0,0.15) 40%);
+padding: 0 3px;
+}
+
+.ecg-container {
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 60px;
+overflow: hidden;
+opacity: 0.15;
+}
+
+.ecg-line {
+position: absolute;
+bottom: 20px;
+left: 0;
+height: 40px;
+width: 1500px;
+background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 L30,30 L45,5 L60,55 L75,30 L100,30 L150,30 L170,30 L185,5 L200,55 L215,30 L240,30 L290,30 L310,30 L325,5 L340,55 L355,30 L380,30 L430,30 L450,30 L465,5 L480,55 L495,30 L520,30 L570,30 L590,30 L605,5 L620,55 L635,30 L660,30 L710,30 L730,30 L745,5 L760,55 L775,30 L800,30 L850,30 L870,30 L885,5 L900,55 L915,30 L940,30 L990,30 L1010,30 L1025,5 L1040,55 L1055,30 L1080,30 L1130,30 L1150,30 L1165,5 L1180,55 L1195,30 L1200,30" fill="none" stroke="%23b30000" stroke-width="2"/></svg>') repeat-x;
+animation: ecgAnimate 15s linear infinite;
+}
+
+@keyframes ecgAnimate {
+0% {
+transform: translateX(0);
+}
+100% {
+transform: translateX(-1200px);
+}
+}
+
+.education-icon {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+background-color: #1a1a2e;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 25px;
+border: 3px solid rgba(179, 0, 0, 0.3);
+box-shadow: 0 8px 25px rgba(26, 26, 46, 0.15);
+}
+
+.education-icon i {
+font-size: 40px;
+color: #f8f9fa;
+}
+
+.decorative-elements {
+position: absolute;
+top: 0;
+right: 0;
+width: 120px;
+height: 120px;
+opacity: 0.05;
+z-index: 1;
+}
+</style>
+</head>
+<body><img alt="Logo" src="logo.png" style="width:60px; position:absolute; top:15px; left:15px; z-index:99;"/>
+<div class="slide">
+<!-- ECG Animation -->
+<div class="ecg-container">
+<div class="ecg-line"></div>
+</div>
+<!-- Decorative Elements -->
+<svg class="decorative-elements" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M100,15 C152.467,15 195,57.533 195,110 C195,162.467 152.467,205 100,205 C47.533,205 5,162.467 5,110 C5,57.533 47.533,15 100,15 Z M100,30 C55.964,30 20,65.964 20,110 C20,154.036 55.964,190 100,190 C144.036,190 180,154.036 180,110 C180,65.964 144.036,30 100,30 Z M160,110 C160,143.137 133.137,170 100,170 C66.863,170 40,143.137 40,110 C40,76.863 66.863,50 100,50 C133.137,50 160,76.863 160,110 Z M140,110 C140,132.091 122.091,150 100,150 C77.909,150 60,132.091 60,110 C60,87.909 77.909,70 100,70 C122.091,70 140,87.909 140,110 Z M120,110 C120,121.046 111.046,130 100,130 C88.954,130 80,121.046 80,110 C80,98.954 88.954,90 100,90 C111.046,90 120,98.954 120,110 Z" fill="#1a1a2e"></path>
+</svg>
+<div class="slide-content">
+<div class="education-icon">
+<i class="fas fa-graduation-cap"></i>
+</div>
+<h1>Formazione Accademica</h1>
+<div class="timeline-container">
+<div class="timeline-line"></div>
+<div class="timeline-item">
+<div class="year-dot"></div>
+<div class="timeline-year">2013</div>
+<div class="timeline-content">
+<h2 class="timeline-title">Laurea in Medicina</h2>
+<div class="timeline-university">
+<i class="fas fa-university university-icon"></i>
+Università Federico II
+</div>
+<div class="timeline-grade">
+110/110 e lode
+<span class="badge"><i class="fas fa-award"></i> Summa cum laude</span>
+</div>
+<div class="timeline-thesis">
+<div class="timeline-thesis-title">
+<i class="fas fa-file-alt" style="color: #b30000;"></i> Tesi:
+</div>
+<div class="timeline-thesis-content">
+<span class="highlight">Assistenza meccanica pre-operatoria in pazienti ad alto rischio</span>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="year-dot"></div>
+<div class="timeline-year">2019</div>
+<div class="timeline-content">
+<h2 class="timeline-title">Specializzazione in Cardiologia</h2>
+<div class="timeline-university">
+<i class="fas fa-university university-icon"></i>
+Università Vanvitelli
+</div>
+<div class="timeline-grade">
+50/50 e lode
+<span class="badge"><i class="fas fa-award"></i> Summa cum laude</span>
+</div>
+<div class="timeline-thesis">
+<div class="timeline-thesis-title">
+<i class="fas fa-file-alt" style="color: #b30000;"></i> Tesi:
+</div>
+<div class="timeline-thesis-content">
+<span class="highlight">Cateterismo interventistico neonatale in esperienza multicentrica italiana</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="position:fixed; bottom:15px; width:100%; display:flex; justify-content:space-around; z-index:99;"><a href="slide_02.html" style="background:#1a1a2e; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">⬅ Indietro</a><a href="index.html" style="background:#1a1a2e; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">🏠 Home</a><a href="slide_04.html" style="background:#1a1a2e; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">Avanti ➡</a></div></body>
+</html>
